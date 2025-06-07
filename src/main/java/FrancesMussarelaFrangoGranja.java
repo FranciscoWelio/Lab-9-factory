@@ -1,11 +1,17 @@
-public class FrancesMussarelaFrangoGranja implements FactorySanduba{
+import Ovo.Ovo;
+import Pao.Pao;
+import Presunto.Presunto;
+import Queijo.Queijo;
+
+public class FrancesMussarelaFrangoGranja extends Sanduiche{
     @Override
-    public Sanduiche criarSanduiche() {
-        Pao pao = new Pao("Francês");
-        Queijo queijo = new Queijo("Mussarela");
-        Presunto presunto = new Presunto("Frango");
-        Ovo ovo = new Ovo("Granja");
-        Tomate tomate = new Tomate();
-        return new SanduicheConcreto(pao, tomate, queijo, presunto, ovo);
+    public void montar() {
+        System.out.println("Seu sanduiche FRANGO FRANCÊS está em produção!");
+    }
+    public FrancesMussarelaFrangoGranja(){
+        this.pao = "Francês";
+        this.queijo = "Mussarela";
+        this.presunto = "Frango";
+        this.ovo = "Granja";
     }
 }

@@ -1,12 +1,17 @@
-public class BolaPratoFrangoCapoeira implements FactorySanduba{
+import Ovo.Ovo;
+import Pao.Pao;
+import Presunto.Presunto;
+import Queijo.Queijo;
 
+public class BolaPratoFrangoCapoeira extends Sanduiche{
     @Override
-    public Sanduiche criarSanduiche() {
-        Pao pao = new Pao("Bola");
-        Queijo queijo = new Queijo("Prato");
-        Presunto presunto = new Presunto("Frango");
-        Ovo ovo = new Ovo("Capoeira");
-        Tomate tomate = new Tomate();
-        return new SanduicheConcreto(pao, tomate, queijo, presunto, ovo);
+    public void montar() {
+        System.out.println("Seu sanduiche FRANGO LUTADOR está em produção!");
+    }
+    public BolaPratoFrangoCapoeira(){
+        this.pao = "Bola";
+        this.queijo = "Prato";
+        this.presunto = "Frango";
+        this.ovo = "Capoeira";
     }
 }

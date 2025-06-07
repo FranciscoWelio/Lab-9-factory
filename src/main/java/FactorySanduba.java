@@ -1,3 +1,3 @@
 public interface FactorySanduba {
-    Sanduiche criarSanduiche();
+    public abstract Sanduiche criarSanduiche();
 }

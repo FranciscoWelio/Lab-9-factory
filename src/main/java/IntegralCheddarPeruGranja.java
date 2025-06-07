@@ -1,11 +1,17 @@
-public class IntegralCheddarPeruGranja implements FactorySanduba{
+import Ovo.Ovo;
+import Pao.Pao;
+import Presunto.Presunto;
+import Queijo.Queijo;
+
+public class IntegralCheddarPeruGranja extends Sanduiche{
     @Override
-    public Sanduiche criarSanduiche() {
-        Pao pao = new Pao("Integral");
-        Queijo queijo = new Queijo("Cheddar");
-        Presunto presunto = new Presunto("Peru");
-        Ovo ovo = new Ovo("Granja");
-        Tomate tomate = new Tomate();
-        return new SanduicheConcreto(pao, tomate, queijo, presunto, ovo);
+    public void montar() {
+        System.out.println("Seu sanduiche INTEGRAL DO CAMPO está em produção!");
+    }
+    public IntegralCheddarPeruGranja(){
+        this.pao = "Integral";
+        this.queijo = "Cheddar";
+        this.presunto = "Peru";
+        this.ovo = "Granja";
     }
 }

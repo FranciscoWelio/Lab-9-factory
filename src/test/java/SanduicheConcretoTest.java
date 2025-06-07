@@ -1,21 +1,41 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class SanduicheConcretoTest {
+public class SanduicheFactoryTest {
+
     @Test
-    void deveCriarSanduicheComTodosIngredientes() {
-        // Arrange
-        Pao pao = new Pao("Integral");
-        Queijo queijo = new Queijo("Prato");
-        Presunto presunto = new Presunto("Frango");
-        Ovo ovo = new Ovo("Capoeira");
-        Tomate tomate = new Tomate();
+    public void testSanduicheIntegral() {
+        FactorySanduba factory = new IntegralFactory();
+        Sanduiche sanduiche = factory.criarSanduiche();
 
-        // Act
-        SanduicheConcreto sanduiche = new SanduicheConcreto(pao, tomate, queijo, presunto, ovo);
+        assertEquals("integral", sanduiche.pao);
+        assertEquals("prato", sanduiche.queijo);
+        assertEquals("frango", sanduiche.presunto);
+        assertEquals("capoeira", sanduiche.ovo);
+        assertEquals("sim", sanduiche.tomate);
+    }
 
-        // Assert
-        assertNotNull(sanduiche, "O sanduíche não deveria ser null");
+    @Test
+    public void testSanduicheFrances() {
+        FactorySanduba factory = new FrancesFactory();
+        Sanduiche sanduiche = factory.criarSanduiche();
+
+        assertEquals("francês", sanduiche.pao);
+        assertEquals("mussarela", sanduiche.queijo);
+        assertEquals("peru", sanduiche.presunto);
+        assertEquals("granja", sanduiche.ovo);
+        assertEquals("sim", sanduiche.tomate);
+    }
+
+    @Test
+    public void testSanduicheBola() {
+        FactorySanduba factory = new BolaFactory();
+        Sanduiche sanduiche = factory.criarSanduiche();
+
+        assertEquals("bola", sanduiche.pao);
+        assertEquals("cheddar", sanduiche.queijo);
+        assertEquals("frango", sanduiche.presunto);
+        assertEquals("granja", sanduiche.ovo);
+        assertEquals("sim", sanduiche.tomate);
     }
 }
